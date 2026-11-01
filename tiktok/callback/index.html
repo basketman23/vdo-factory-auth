@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VDO Factory · TikTok</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:12vh auto;padding:0 16px;color:#1A1D21;background:#FBFAF7}
+a{color:#BE4A21}code{background:#F4F2ED;padding:1px 5px;border-radius:4px}
+@media (prefers-color-scheme:dark){body{color:#EDEAE4;background:#14171A}code{background:#22272C}a{color:#E8815C}}</style></head>
+<body>
+<h1>กำลังกลับไปที่ VDO Factory…</h1>
+<p>TikTok returned you here after login. This page only hands the one-time login code to the VDO Factory app running on
+your own computer (<code>127.0.0.1:8017</code>). It stores and sends nothing anywhere else.</p>
+<p id="manual" hidden>If nothing happens, <a id="go" href="#">continue here</a>.</p>
+<script>
+  // Pass TikTok's ?code=&state= (or ?error=) to the local app. Nothing is stored or sent elsewhere.
+  var target = "http://127.0.0.1:8017/api/tiktok/callback" + window.location.search;
+  document.getElementById("go").href = target;
+  document.getElementById("manual").hidden = false;
+  window.location.replace(target);
+</script>
+</body></html>
